@@ -258,9 +258,14 @@ export const barChartOptionsWeeklyRevenue = {
 
 export const lineChartDataTotalSpent = [
   {
-    name: "Revenue",
-    data: [50, 64, 48, 66, 49, 68],
+    name: "收",
+    data: [50, 64, 48, 190, 49, 68],
     color: "#4318FF",
+  },
+  {
+    name: "付",
+    data: [50, 300, 48, 66, 49, 68],
+    color: "#6AD2FF",
   },
 ];
 
@@ -309,10 +314,12 @@ export const lineChartOptionsTotalSpent = {
       show: false,
     },
     labels: {
+      show: false,
       style: {
         colors: "#A3AED0",
         fontSize: "12px",
         fontWeight: "500",
+        display: "none",
       },
     },
     type: "text",

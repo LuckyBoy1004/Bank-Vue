@@ -5,8 +5,6 @@ import { BsFillInfoCircleFill } from "react-icons/bs";
 interface Info {
   receive: string,
   send: string,
-  amountReceiveTrans: number,
-  amountSendTrans: number,
   tooltip: string,
 }
 
@@ -16,7 +14,7 @@ const Box = (props: {
 }) => {
   const { title, info } = props;
   return (
-    <Card extra="!flex-row flex-grow items-top rounded-[20px] p-3 h-3/6 -m-auto ">
+    <Card extra="!flex-row flex-grow items-top rounded-[20px] p-3">
       <div className="h-auto ml-4 flex w-auto flex-col justify-center">
         <p className="font-dm text-sm font-medium text-gray-600 my-2">{title}</p>
         <h4 className="text-xl font-bold text-navy-700 dark:text-white">
