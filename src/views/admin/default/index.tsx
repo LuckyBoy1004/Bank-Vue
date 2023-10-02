@@ -7,49 +7,85 @@ import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 
 import Widget from "components/widget/Widget";
+import Box from "components/box/Box";
 import CheckTable from "views/admin/default/components/CheckTable";
 import ComplexTable from "views/admin/default/components/ComplexTable";
 import DailyTraffic from "views/admin/default/components/DailyTraffic";
 import TaskCard from "views/admin/default/components/TaskCard";
 import tableDataCheck from "./variables/tableDataCheck";
 import tableDataComplex from "./variables/tableDataComplex";
+import Transaction from "components/transaction/Transaction";
 
 const Dashboard = () => {
+  const dummyData = {
+    totalTransaction: {
+      receive: "￥3338.26",
+      send: "￥10100",
+      amountSendTrans: 0,
+      amountReceiveTrans: 0,
+      tooltip: "交易总金额",
+    },
+    todayTransaction: {
+      receive: "￥0",
+      send: "￥0",
+      amountSendTrans: 0,
+      amountReceiveTrans: 0,
+      tooltip: "今日成功交易金额及笔数"
+    },
+    yesterdayTransaction: {
+      receive: "￥0",
+      send: "￥0",
+      amountSendTrans: 0,
+      amountReceiveTrans: 0,
+      tooltip: "今日成功交易金额及笔数"
+    },
+  }
   return (
     <div>
       {/* Card widget */}
 
-      <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"Earnings"}
-          subtitle={"$340.5"}
-        />
-        <Widget
-          icon={<IoDocuments className="h-6 w-6" />}
-          title={"Spend this month"}
-          subtitle={"$642.39"}
-        />
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"Sales"}
-          subtitle={"$574.34"}
-        />
-        <Widget
-          icon={<MdDashboard className="h-6 w-6" />}
-          title={"Your Balance"}
-          subtitle={"$1,000"}
-        />
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"New Tasks"}
-          subtitle={"145"}
-        />
-        <Widget
-          icon={<IoMdHome className="h-6 w-6" />}
-          title={"Total Projects"}
-          subtitle={"$2433"}
-        />
+      <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-3">
+        <Transaction
+          title="交易总金额"
+          info={dummyData.todayTransaction}
+          yesterday={dummyData.yesterdayTransaction}/>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-1 lg:grid-cols-1 2xl:grid-cols-2 3xl:grid-cols-2">
+          <div className="row-2">
+            <Box
+              title="交易总金额"
+              info={
+                dummyData.totalTransaction
+              }
+            />
+            <Box
+              title="交易总金额"
+              info={
+                dummyData.totalTransaction
+              }
+            />
+          </div>
+          <div className="row-2">
+            <Box
+              title="交易总金额"
+              info={
+                dummyData.totalTransaction
+              }
+            />
+            <Box
+              title="交易总金额"
+              info={
+                dummyData.totalTransaction
+              }
+            />
+          </div>
+        </div>
+        
+        <Transaction
+          title="交易总金额"
+          info={dummyData.todayTransaction}
+          yesterday={dummyData.yesterdayTransaction}/>
+
       </div>
 
       {/* Charts */}

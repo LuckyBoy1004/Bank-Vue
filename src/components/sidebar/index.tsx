@@ -5,6 +5,7 @@ import Links from "./components/Links";
 
 import SidebarCard from "components/sidebar/componentsrtl/SidebarCard";
 import routes from "routes";
+import nav_logo from "../../assets/img/dashboards/nav_logo.png"
 
 const Sidebar = (props: {
   open: boolean;
@@ -24,9 +25,14 @@ const Sidebar = (props: {
         <HiX />
       </span>
 
-      <div className={`mx-[56px] mt-[50px] flex items-center`}>
-        <div className="mt-1 ml-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-navy-700 dark:text-white">
-          Horizon <span className="font-medium">FREE</span>
+      <div className={`mx-[10px] mt-[50px] flex items-center`}>
+        <div className="mt-1 ml-1 h-2.5 font-poppins text-[26px] font-bold uppercase text-navy-700 dark:text-white inline-flex">
+          <img
+            className="h-10 w-10 rounded-full"
+            src={nav_logo}
+            alt="Logo"
+          />
+          <span className="font-medium text-xl mx-[10px] mt-[5px]">聚鼎四方系统演示</span>
         </div>
       </div>
       <div className="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />
