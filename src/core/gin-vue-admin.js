@@ -9,7 +9,7 @@ export default {
   install: (app) => {
     register(app)
     console.log(`
-       欢迎使用 Gin-Vue-Admin
+       欢迎使用 聚鼎四方系统演示
        当前版本:v2.5.7
        加群方式:微信：shouzi_1994 QQ群：622360840
        GVA讨论社区:https://support.qq.com/products/371961
