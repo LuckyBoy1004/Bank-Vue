@@ -7,13 +7,26 @@
             <el-form-item>
               <el-input
                 class="header_input"
-                placeholder="用户名"
+                placeholder="三方通道名称"
               />
             </el-form-item>
             <el-form-item>
+              <el-select
+                class="header_input"
+                placeholder="国家"
+              />
+            </el-form-item>
+            <el-form-item>
+              <el-select
+                class="header_input"
+                placeholder="状态"
+              />
+            </el-form-item>
+            <el-form-item label="入金网关">
+              
               <el-input
                 class="header_input"
-                placeholder="昵称"
+                placeholder="三方通道名称"
               />
             </el-form-item>
             <el-button
@@ -21,8 +34,17 @@
             >查询</el-button>
             <el-button
               type="primary"
+            >新增三方通道</el-button>
+            <el-button
+              type="primary"
+            >重置</el-button>
+            <el-button
+              type="danger"
+            >一键切停</el-button>
+            <el-button
+              type="success"
               @click="addUser"
-            >新增系统代理商</el-button>
+            >一键开启</el-button>
           </el-row>
         </el-col>
         
@@ -33,43 +55,73 @@
       >
         <el-table-column
           align="left"
-          label="日期"
-          min-width="150"
+          label="序号"
+          min-width="50"
           prop="ID"
         />
         <el-table-column
           align="left"
-          label="头像"
-          min-width="75"
-        >
-          <template #default="scope">
-            <CustomPic
-              style="margin-top:8px"
-              :pic-src="scope.row.headerImg"
-            />
-          </template>
-        </el-table-column>
-        <el-table-column
-          align="left"
-          label="用户名"
-          min-width="100"
-          prop="userName"
-        />
-        <el-table-column
-          align="left"
-          label="昵称"
-          min-width="100"
-          prop="phone"
-        />
-        <el-table-column
-          align="left"
-          label="可用余额"
+          label="入金网关"
           min-width="100"
           prop="nickName"
         />
         <el-table-column
           align="left"
-          label="用户角色"
+          label="网关密钥"
+          min-width="100"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="三方通道名称"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="三方通道编码"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="已绑定四方通道"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="金额类型"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="单笔金额"
+          min-width="100"
+          prop="phone"
+        />
+        <el-table-column
+          align="left"
+          label="成本(%)"
+          min-width="100"
+          prop="phone"
+        />
+        <el-table-column
+          align="left"
+          label="成率(%)"
+          min-width="100"
+          prop="phone"
+        />
+        <el-table-column
+          align="left"
+          label="网关余额"
+          min-width="100"
+          prop="phone"
+        />
+        <el-table-column
+          align="left"
+          label="状态"
           min-width="150"
         >
           <template #default="scope">
@@ -86,36 +138,17 @@
         </el-table-column>
 
         <el-table-column
-          label="操作"
+          label="按钮组"
           min-width="250"
           fixed="right"
         >
           <template #default="scope">
-            <el-popover
-              v-model="scope.row.visible"
-              placement="top"
-              width="160"
-            >
-              <p>确定要删除此用户吗</p>
-              <div style="text-align: right; margin-top: 8px;">
-                <el-button
-                  type="primary"
-                  link
-                  @click="scope.row.visible = false"
-                >取消</el-button>
-                <el-button
-                  type="primary"
-                  @click="deleteUserFunc(scope.row)"
-                >确定</el-button>
-              </div>
-              <template #reference>
-                <el-button
-                  type="primary"
-                  link
-                  icon="delete"
-                >删除</el-button>
-              </template>
-            </el-popover>
+            <el-button
+              type="primary"
+              link
+              icon="video-play"
+              @click="openEdit(scope.row)"
+            >编辑</el-button>
             <el-button
               type="primary"
               link
@@ -125,7 +158,7 @@
             <el-button
               type="primary"
               link
-              icon="magic-stick"
+              icon="delete"
               @click="resetPasswordFunc(scope.row)"
             >重置密码</el-button>
           </template>

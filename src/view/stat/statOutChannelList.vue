@@ -1,19 +1,66 @@
 <template>
   <div>
     <div class="gva-table-box">
+      <el-col class="total_info">
+          <div class="flex flex-wrap">
+              <TotalInfo
+                title="发起总额"
+                info="￥0.00"
+              />
+              <TotalInfo
+                title="成功总额"
+                info="￥0.00"
+              />
+              <TotalInfo
+                title="发起订单数"
+                info="0"
+              />
+              <TotalInfo
+                title="成功订单数"
+                info="0"
+              />
+              <TotalInfo
+                title="成本手续费"
+                info="￥0.00"
+              />
+              <TotalInfo
+                title="商户手续费"
+                info="￥0.00"
+              />
+              <TotalInfo
+                title="手续费盈利"
+                info="￥0.00"
+              />
+              <TotalInfo
+                title="成功率"
+                info="0.00%"
+              />
+          </div>
+      </el-col>
       <div class="gva-btn-list">
         <el-col :gutter="10" :span="24">
           <el-row :gutter="10" :span="24">
             <el-form-item>
-              <el-input
+              <el-date-picker
                 class="header_input"
-                placeholder="用户名"
+                v-model="value1"
+                type="daterange"
+                range-separator="至"
+                start-placeholder="开始时间"
+                end-placeholder="结束时间"
+                :size="size"
+              />
+            </el-form-item>
+            <el-form-item label="三方筛选">
+              <el-select
+                class="header_input"
+                placeholder="关键字输入/选择"
               />
             </el-form-item>
             <el-form-item>
-              <el-input
+              <el-select
                 class="header_input"
-                placeholder="昵称"
+                placeholder="通道编码输入/选择"
               />
             </el-form-item>
             <el-button
@@ -21,8 +68,16 @@
             >查询</el-button>
             <el-button
               type="primary"
-              @click="addUser"
-            >新增系统代理商</el-button>
+            >重置</el-button>
+            <el-button
+              type="primary"
+            >切换统计标准</el-button>
+            <el-button
+              type="success"
+            >归总</el-button>
+            <el-button
+              type="success"
+            >导出Excel</el-button>
           </el-row>
         </el-col>
         
@@ -33,103 +88,82 @@
       >
         <el-table-column
           align="left"
-          label="日期"
-          min-width="150"
-          prop="ID"
-        />
-        <el-table-column
-          align="left"
-          label="头像"
-          min-width="75"
-        >
-          <template #default="scope">
-            <CustomPic
-              style="margin-top:8px"
-              :pic-src="scope.row.headerImg"
-            />
-          </template>
-        </el-table-column>
-        <el-table-column
-          align="left"
-          label="用户名"
-          min-width="100"
-          prop="userName"
-        />
-        <el-table-column
-          align="left"
-          label="昵称"
-          min-width="100"
-          prop="phone"
-        />
-        <el-table-column
-          align="left"
-          label="可用余额"
+          label="通道编码"
           min-width="100"
           prop="nickName"
         />
         <el-table-column
           align="left"
-          label="用户角色"
-          min-width="150"
-        >
-          <template #default="scope">
-            启用
-            <el-switch
-              v-model="scope.row.enable"
-              inline-prompt
-              :active-value="1"
-              :inactive-value="2"
-              @change="()=>{switchEnable(scope.row)}"
-            />
-            禁用
-          </template>
-        </el-table-column>
-
+          label="日期"
+          min-width="100"
+          prop="nickName"
+        />
         <el-table-column
-          label="操作"
-          min-width="250"
-          fixed="right"
-        >
-          <template #default="scope">
-            <el-popover
-              v-model="scope.row.visible"
-              placement="top"
-              width="160"
-            >
-              <p>确定要删除此用户吗</p>
-              <div style="text-align: right; margin-top: 8px;">
-                <el-button
-                  type="primary"
-                  link
-                  @click="scope.row.visible = false"
-                >取消</el-button>
-                <el-button
-                  type="primary"
-                  @click="deleteUserFunc(scope.row)"
-                >确定</el-button>
-              </div>
-              <template #reference>
-                <el-button
-                  type="primary"
-                  link
-                  icon="delete"
-                >删除</el-button>
-              </template>
-            </el-popover>
-            <el-button
-              type="primary"
-              link
-              icon="edit"
-              @click="openEdit(scope.row)"
-            >编辑</el-button>
-            <el-button
-              type="primary"
-              link
-              icon="magic-stick"
-              @click="resetPasswordFunc(scope.row)"
-            >重置密码</el-button>
-          </template>
-        </el-table-column>
+          align="left"
+          label="入金网关"
+          min-width="100"
+          prop="phone"
+        />
+        <el-table-column
+          align="left"
+          label="三方通道"
+          min-width="100"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="发起金额"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="成功金额"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="净跑量"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="发起订单数"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="成功订单数"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="订单成功率(%)"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="成本手续费"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="商户手续费"
+          min-width="150"
+          prop="nickName"
+        />
+        <el-table-column
+          align="left"
+          label="手续费盈利"
+          min-width="150"
+          prop="nickName"
+        />
 
       </el-table>
       <div class="gva-pagination">
@@ -259,6 +293,7 @@ import { setUserInfo, resetPassword } from '@/api/user.js'
 
 import { nextTick, ref, watch } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import TotalInfo from '@/components/totalInfo/totalInfo.vue'
 
 defineOptions({
   name: 'User',
@@ -508,6 +543,9 @@ const switchEnable = async(row) => {
     @apply w-52 h-52 border border-solid border-gray-300 rounded-xl flex justify-center items-center cursor-pointer;
   }
   .header_input {
-    margin-inline: 10px;
+    margin-right: 20px;
+  }
+  .total_info {
+    margin-bottom: 40px;
   }
 </style>
