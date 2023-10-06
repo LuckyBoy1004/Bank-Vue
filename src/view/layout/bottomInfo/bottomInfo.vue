@@ -15,7 +15,7 @@
       <a
         class="text-gray-800 font-bold"
         href="https://github.com/flipped-aurora"
-      >flipped-aurora团队</a>
+      >Philip</a>
     </span>
   </div>
 </template>

@@ -54,7 +54,7 @@
         </el-card>
         <el-card style="margin-top: 20px">
           <template #header>
-            <div>flipped-aurora团队</div>
+            <div>Philip</div>
           </template>
           <div>
             <el-row>
