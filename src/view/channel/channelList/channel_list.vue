@@ -4,59 +4,9 @@
         <div class="gva-btn-list">
           <el-col :gutter="10" :span="24">
             <el-row :gutter="10" :span="24">
-              <el-form-item>
-                <el-input
-                  class="header_input"
-                  placeholder="流水号"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-input
-                  class="header_input"
-                  placeholder="关联订单号"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-date-picker
-                  class="header_input"
-                  v-model="value1"
-                  type="daterange"
-                  range-separator="至"
-                  start-placeholder="开始时间"
-                  end-placeholder="结束时间"
-                  :size="size"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-input
-                  class="header_input"
-                  placeholder="操作备注"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-select
-                  class="header_input"
-                  placeholder="资金流向"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-select
-                  class="header_input"
-                  placeholder="操作事件"
-                />
-              </el-form-item>
-              <el-form-item>
-                <el-select
-                  class="header_input"
-                  placeholder="所属用户"
-                />
-              </el-form-item>
               <el-button
                 type="primary"
-              >查询</el-button>
-              <el-button
-                type="primary"
-              >重置</el-button>
+              >新增入金网关</el-button>
             </el-row>
           </el-col>
           
@@ -67,74 +17,70 @@
         >
           <el-table-column
             align="left"
-            label="创建时间"
+            label="入金网关ID"
             min-width="150"
             prop="ID"
           />
           <el-table-column
             align="left"
-            label="流水号"
+            label="入金网关名称"
             min-width="100"
             prop="userName"
           />
           <el-table-column
             align="left"
-            label="关联单号"
+            label="入金网关Code"
             min-width="100"
             prop="phone"
           />
           <el-table-column
             align="left"
-            label="用户"
+            label="下单网关"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             align="left"
-            label="动账金额"
+            label="查单网关"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             align="left"
-            label="关联手续费"
+            label="代付网关"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             align="left"
-            label="实际动账"
+            label="代付查单网关"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             align="left"
-            label="交易事件"
+            label="入金网关类型"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
-            align="left"
-            label="资金流向"
-            min-width="100"
-            prop="nickName"
-          />
-          <el-table-column
-            align="left"
-            label="余额变动"
-            min-width="100"
-            prop="nickName"
-          />
-          <el-table-column
-            align="left"
-            label="备付金变动"
-            min-width="100"
-          />
-          <el-table-column
-            align="left"
-            label="备注"
-            min-width="100"
-          />
+            label="按钮组"
+            min-width="200"
+            fixed="right"
+          >
+            <template #default="scope">
+              <el-button
+                type="primary"
+                link
+                icon="edit"
+              >可选参数</el-button>
+              <el-button
+                type="danger"
+                link
+                icon="delete"
+              >删除</el-button>
+            </template>
+          </el-table-column>
         </el-table>
         <div class="gva-pagination">
           <el-pagination

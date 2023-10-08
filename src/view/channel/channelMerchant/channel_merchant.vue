@@ -5,15 +5,15 @@
           <el-col :gutter="10" :span="24">
             <el-row :gutter="10" :span="24">
               <el-form-item>
-                <el-input
+                <el-select
                   class="header_input"
-                  placeholder="昵称"
+                  placeholder="入金网关"
                 />
               </el-form-item>
               <el-form-item>
                 <el-input
                   class="header_input"
-                  placeholder="搜索商户编号UUID"
+                  placeholder="商户号"
                 />
               </el-form-item>
               <el-button
@@ -21,7 +21,7 @@
               >查询</el-button>
               <el-button
                 type="primary"
-              >设置钱包</el-button>
+              >新增网关密钥</el-button>
               <el-button
                 type="primary"
               >重置</el-button>
@@ -35,37 +35,67 @@
           
           <el-table-column
             align="left"
-            label="昵称"
+            label="序号ID"
             min-width="100"
             prop="userName"
           />
           <el-table-column
             align="left"
-            label="上级"
+            label="入金网关名称"
             min-width="100"
             prop="phone"
           />
           <el-table-column
             align="left"
-            label="可用余额"
+            label="入金网关类型"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             align="left"
-            label="备付金余额"
+            label="昵称"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             align="left"
-            label="冻结金额"
+            label="商户号"
+            min-width="100"
+            prop="nickName"
+          />
+          <el-table-column
+            align="left"
+            label="商户key"
+            min-width="100"
+            prop="nickName"
+          />
+          <el-table-column
+            align="left"
+            label="RSA私钥"
+            min-width="100"
+            prop="nickName"
+          />
+          <el-table-column
+            align="left"
+            label="RSA公钥"
+            min-width="100"
+            prop="nickName"
+          />
+          <el-table-column
+            align="left"
+            label="appId"
+            min-width="100"
+            prop="nickName"
+          />
+          <el-table-column
+            align="left"
+            label="日限额"
             min-width="100"
             prop="nickName"
           />
           <el-table-column
             label="按钮组"
-            min-width="350"
+            min-width="150"
             fixed="right"
           >
             <template #default="scope">
@@ -73,27 +103,12 @@
                 type="primary"
                 link
                 icon="edit"
-              >资金划转</el-button>
-              <el-button
-                type="primary"
-                link
-                icon="edit"
-              >加款</el-button>
+              >编辑</el-button>
               <el-button
                 type="danger"
                 link
-                icon="edit"
-              >扣除</el-button>
-              <el-button
-                type="primary"
-                link
-                icon="edit"
-              >解冻</el-button>
-              <el-button
-                type="danger"
-                link
-                icon="edit"
-              >冻结</el-button>
+                icon="delete"
+              >删除</el-button>
             </template>
           </el-table-column>
   
