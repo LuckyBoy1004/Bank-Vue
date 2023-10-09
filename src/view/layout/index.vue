@@ -108,7 +108,7 @@
                           </div>
                           <template #dropdown>
                             <el-dropdown-menu>
-                              <el-dropdown-item>
+                              <!-- <el-dropdown-item>
                                 <span class="font-bold">
                                   当前角色：{{ userStore.userInfo.authority.authorityName }}
                                 </span>
@@ -137,7 +137,7 @@
                                     <span class="button">K</span>
                                   </div>
                                 </div>
-                              </el-dropdown-item>
+                              </el-dropdown-item> -->
                               <el-dropdown-item
                                 icon="avatar"
                                 @click="toPerson"
