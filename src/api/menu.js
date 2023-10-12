@@ -1,11 +1,12 @@
 import service from '@/utils/request'
+import config from '@/core/config';
 // @Summary 用户登录 获取动态路由
 // @Produce  application/json
 // @Param 可以什么都不填 调一下即可
 // @Router /menu/getMenu [post]
 export const asyncMenu = () => {
   return service({
-    url: '/menu/getMenu',
+    url: config.backend+'/menu/getMenu',
     method: 'post'
   })
 }
@@ -19,7 +20,7 @@ export const asyncMenu = () => {
 // @Router /menu/getMenuList [post]
 export const getMenuList = (data) => {
   return service({
-    url: '/menu/getMenuList',
+    url: config.backend+'/menu/getMenuList',
     method: 'post',
     data
   })
@@ -31,7 +32,7 @@ export const getMenuList = (data) => {
 // @Router /menu/getMenuList [post]
 export const addBaseMenu = (data) => {
   return service({
-    url: '/menu/addBaseMenu',
+    url: config.backend+'/menu/addBaseMenu',
     method: 'post',
     data
   })
@@ -78,7 +79,7 @@ export const getMenuAuthority = (data) => {
 // @Router /menu/deleteBaseMenu [post]
 export const deleteBaseMenu = (data) => {
   return service({
-    url: '/menu/deleteBaseMenu',
+    url: config.backend+'/menu/deleteBaseMenu',
     method: 'post',
     data
   })

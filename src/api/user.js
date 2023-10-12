@@ -6,7 +6,7 @@ import service from '@/utils/request'
 // @Router /base/login [post]
 export const login = (data) => {
   return service({
-    url: config.backend+'/login',
+    url: config.backend+'/base/login',
     method: 'post',
     data: data
   })
