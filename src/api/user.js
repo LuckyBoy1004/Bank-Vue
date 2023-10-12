@@ -1,3 +1,4 @@
+import config from '@/core/config';
 import service from '@/utils/request'
 // @Summary 用户登录
 // @Produce  application/json
@@ -5,7 +6,7 @@ import service from '@/utils/request'
 // @Router /base/login [post]
 export const login = (data) => {
   return service({
-    url: '/base/login',
+    url: config.backend+'/login',
     method: 'post',
     data: data
   })
@@ -29,7 +30,7 @@ export const captcha = (data) => {
 // @Router /base/resige [post]
 export const register = (data) => {
   return service({
-    url: '/user/admin_register',
+    url: config.backend+'/signup',
     method: 'post',
     data: data
   })
