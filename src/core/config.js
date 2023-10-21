@@ -5,7 +5,7 @@
 const config = {
   appName: '聚鼎四方系统演示',
   appLogo: 'http://198.74.117.41/static/img/nav_logo.470f8f3e.png',
-  backend: 'http://localhost:8001/api',
+  backend: '',
   showViteLogo: true
 }
 
