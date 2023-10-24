@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021-08-07</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        h3 {
+            margin: 0;
+        }
+
+        .ul ul li {
+            padding-left: 20px;
+        }
+    </style>
+<style id="mttstyle">
+    #mttContainer {
+      left: 0 !important;
+      top: 0 !important;
+      width: 1000px !important;
+      margin-left: -500px !important;
+      position: fixed !important;
+      z-index: 100000200 !important;
+      background: none !important;
+      pointer-events: none !important;
+      display: inline-block !important;
+    }
+    .bootstrapiso .tooltip {
+      width:auto  !important;
+      height:auto  !important;
+      background: none !important;
+      border:none !important;
+      border-radius: 0px !important;
+      visibility: visible  !important;
+      pointer-events: none !important;
+    }
+    .bootstrapiso  .bs-tooltip-top { 
+      margin-bottom: 15px  !important;
+    }
+    .bootstrapiso  .bs-tooltip-bottom { 
+      margin-top: 15px  !important;
+    }
+    .bootstrapiso .tooltip-inner {
+      font-size: 14px  !important;
+      max-width: 200px  !important;
+      text-align: center !important;
+      backdrop-filter: blur(4px) !important; 
+      background-color: #000000b8 !important;
+      color: #ffffffff !important;
+      pointer-events: auto;
+    }
+    .bootstrapiso .arrow::before {
+      border-top-color: #000000b8 !important;
+    }
+    .bootstrapiso .arrow {
+      font-size: 14px  !important;
+      margin: auto  !important;
+    }
+    .bootstrapiso .arrow::after {
+      display:none !important;
+    }
+    .ocr_text_div{
+      position: absolute;
+      opacity: 0.7;
+      font-size: calc(100% + 1cqw);
+      overflow: hidden;
+      border: 2px solid CornflowerBlue;
+      color: transparent !important;
+      background: none !important;
+    }
+
+    </style></head>
+
+<body class="stackedit">
+<div class="stackedit__left">
+    <div class="stackedit__toc">
+        <div class="toc"><h3>文章目录</h3>
+            <ul>
+                <li><a href="http://198.74.117.41/3.html#__API_1">欢迎使用 聚鼎四方系统演示支付系统 （API对接文档）</a></li>
+                <ul>
+                    <ul class="ul">
+                        <li><h3><a href="http://198.74.117.41/3.html#1__20">1. 接口请求跟地址</a></h3></li>
+                        <li><h3><a href="http://198.74.117.41/3.html#2__26">2. 签名验证机制</a></h3></li>
+                        <li><h3><a href="http://198.74.117.41/3.html#3___63">3. 统一下单（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a__64">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b__69">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b__93">b. 返回结果</a></li>
+                        </ul>
+                        <li><h3><a href="http://198.74.117.41/3.html#4___121">4. 订单异步通知回调（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a__122">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b__127">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#c__151">c. 回调接收返回</a></li>
+                        </ul>
+                        <li><h3><a href="http://198.74.117.41/3.html#5___162">5. 查询订单（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a__163">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b__168">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#c__183">c. 返回结果</a></li>
+                        </ul>
+
+                        <li><h3><a href="http://198.74.117.41/3.html#6___63">6. API代付（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a6__64">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b6__69">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b6__93">b. 返回结果</a></li>
+                        </ul>
+                        <li><h3><a href="http://198.74.117.41/3.html#7___121">7. API代付订单异步通知回调（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a7__122">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b7__127">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#c7__151">c. 回调接收返回</a></li>
+                        </ul>
+                        <li><h3><a href="http://198.74.117.41/3.html#8___162">8. API代付订单查询订单（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a8__163">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b8__168">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#c8__183">c. 返回结果</a></li>
+                        </ul>
+
+                        <li><h3><a href="http://198.74.117.41/3.html#9___162">8. 查询商户余额（接口）</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a9__163">a. 请求说明</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b9__168">b. 请求参数</a></li>
+                            <li><a href="http://198.74.117.41/3.html#c9__183">c. 返回结果</a></li>
+                        </ul>
+
+                        <li><h3><a href="http://198.74.117.41/3.html#6___200">6. 对接demo</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a__200">a. JAVA DEMO</a></li>
+                            <li><a href="http://198.74.117.41/3.html#b__201">b. PHP DEMO</a></li>
+                        </ul>
+                        <li><h3><a href="http://198.74.117.41/3.html#7___300">7. 附录</a></h3></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/3.html#a__300">a. 附录1:通道编码payType列表(具体已开通的通道编码请咨询运营人员)</a></li>
+                        </ul>
+                        <li><a href="http://198.74.117.41/3.html#__213">本系统最终解释权归“聚鼎”聚合支付开发团队所有，所有有权使用本系统的主体，均以获得授权并且租用的方式使用，所有源码永远不外泄，如市面上出现其他茂名系统，并因此导致的经济损失于本团队无关，“聚鼎”聚合支付
+                            只此一家，别无分号！</a></li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="stackedit__right">
+    <div class="stackedit__html">
+<!--        <p><img src="https://img-blog.csdnimg.cn/739044d2dd79492196eda56fba2fcb89.png" alt="聚鼎四方系统演示支付"></p>-->
+        <h1><a id="__API_1"></a>欢迎使用 聚鼎四方系统演示支付系统 （API对接文档）</h1>
+        <hr>
+        <p>我们理解您需要更高效，更安全，更顺手，性能更高的四方聚合支付系统。<br><br>
+            您再也不想经历使用过程中系统突然卡顿，老是刷新不出来，多刷几下直接卡死的情况<br>
+            您再也不想经历使用过程中要查一条数据，要找一个模块老是不知道该往哪里去找<br>
+            您再也不想使用过程中，每天对账分析赚了多少钱都很开心，突然有一天账对不上，订单被异常回调。</p>
+        <p>现在来使用“聚鼎”吧！</p>
+        <blockquote>
+            <ul>
+                <li>系统卡顿，一方面原因是，技术人员编写代码不过关，写的代码性能太低，效率太低，数据量大了之后就开始卡顿<br>
+                    另外一方面也是主要因素，过往情况下这一行的大部分系统都是用php编写的，php的程序性能相比其他语言低下，只是因为php门槛低，便于编写，所以很多人“捡烂便宜”，而我们聚鼎系统，使用golang+vue作为技术栈，前后端分离完成，性能更高，操作更流畅
+                </li>
+                <li>
+                    系统操作不顺手，老是不知道该到哪里去查数据，主要原因还是因为系统编写人员对行业了解不深，没有实际运营过四方聚合支付平台，不知道作为系统运营人员到底需要什么样的功能，导致很多地方想当然，而“聚鼎”的主要设计和开发团队成员是有实际经营四方聚合支付平台的经验的，知道同行业人员到底要什么
+                </li>
+                <li>
+                    使用系统过程中被莫名其妙偷撸？主要原因还是你们之前使用的系统是外界已经传播得很广的“烂大街”产品，源码满天飞，一方面别人已经在流传的代码中安插了后门，你只要使用别人就知道，想搞你的时候顺手就搞了，另一方面这些“烂大街”的系统大部分都是PHP编写的，PHP臭名远扬，漏洞第一好找，一不小心就被别人黑进去了，而“聚鼎”系统，因为后端采用golang语言开发，属于编译型语言，直接编译成可执行文件给你们部署到服务器，本身就自带安全性，而且系统开发过程中也做了防范黑客渗透的操作，第二方面，永远不卖源码，市面上使用的只可能是我们租出去的使用可执行文件部署的系统，所以不用担心系统被人研究或者被传播之后安插后门！
+                </li>
+            </ul>
+        </blockquote>
+        <h2>感谢您选择“聚鼎”，现在您可以开始使用</h2>
+        <h2>
+        </h2>
+        <p></p>
+        <p></p>
+        <h3><a id="1__20"></a>1. 服务器根地址</h3>
+        <blockquote>
+            <ul>
+                <li id="url">http://198.74.117.41</li>
+            </ul>
+        </blockquote>
+        <script>
+            window.onload = function () {
+                document.getElementById('url').innerText = location.origin
+            }
+        </script>
+        <hr>
+        <h3><a id="2__26"></a>2. 签名验证机制</h3>
+        <blockquote>
+            <ul>
+                <li>筛选参数</li>
+            </ul>
+            <blockquote>
+                <p>所有请求包含的<strong style="color: #0c93e4">非空值</strong>参数，<strong style="color: #0c93e4">sign</strong>字段不参与签名</p>
+            </blockquote>
+            <ul>
+                <li>排序</li>
+            </ul>
+            <blockquote>
+                <p>将筛选的参数按照第一个字符的键值ASCII码递增排序（字母升序排序），如果遇到相同字符则按照第二个字符的键值ASCII码递增排序，以此类推。</p>
+            </blockquote>
+            <ul>
+                <li>拼接参数</li>
+            </ul>
+            <blockquote>
+                <p>将排序后的参数与其对应值，组合成 <strong style="color: #0c93e4">参数=参数值</strong> 的格式，并且把这些参数用 <strong style="color: #0c93e4">&amp;</strong>
+                    字符连接起来，值为空的参数需要需要设置默认值，数字类型设置为0，字符串类型设置为 空字符串""，禁止出现<strong style="color: #0c93e4">Null字样</strong></p>
+            </blockquote>
+            <ul>
+                <li>签名生成sign</li>
+            </ul>
+            <blockquote>
+                <p>签名采用 <strong style="color: #0c93e4">MD5 32位</strong>加密方式，上述拼接完成的字符串经过<strong style="color: #0c93e4">MD5 32位加密并转成大写字符</strong>得到加密结果。得到最终的sign</p>
+            </blockquote>
+        </blockquote>
+        <p><strong></strong></p>
+        <h1>示例:</h1>
+        <h1></h1>
+        <p></p>
+        <blockquote>
+            <p>商户UUID：eebdf103-39c6-4ce6-998c-95a32bce7ab3 <br><br>
+                密钥：fMoxMzCcVjHUqMD32gGeYPayzmuOGyxq<br><br>
+                <strong>未加sign签名字段的请求参数json：</strong><br></p>
+        </blockquote>
+        <pre><code>{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "price":"199.30",
+    "payType":"alipay_h5",
+    "merchantOrderNo":"211005023628200453",
+    "notifyUrl":"http://127.0.0.1/api/gateway/notifyInnerMerchantOrder",
+    "returnUrl":"http://127.0.0.1/pay/jsp/gopay/true.jsp",
+    "remark":"下单请求"
+}
+</code></pre>
+        <blockquote>
+            <p><strong>排序并拼接上秘钥后的待加密字符串:</strong><br></p>
+        </blockquote>
+        <pre><code>merchantOrderNo=211005023628200453&amp;merchantUUID=eebdf103-39c6-4ce6-998c-95a32bce7ab3¬ifyUrl=http://127.0.0.1/api/gateway/notifyInnerMerchantOrder&amp;payType=alipay_h5&amp;price=199.30&amp;remark=下单请求&amp;returnUrl=http://127.0.0.1/pay/jsp/gopay/true.jsp&amp;key=fMoxMzCcVjHUqMD32gGeYPayzmuOGyxq</code></pre>
+        <blockquote>
+            <p><strong>签名结果sign:(32位 MD5后转大写)</strong></p>
+        </blockquote>
+        <pre><code>91381A854EC9AD02D409B1110955A5BE</code></pre>
+        <blockquote>
+            <p><strong>最终提交到下单接口的json内容:</strong><br></p>
+        </blockquote>
+        <pre><code>
+{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "price":"199.30",
+    "payType":"alipay_h5",
+    "merchantOrderNo":"211005023628200453",
+    "notifyUrl":"http://127.0.0.1/api/gateway/notifyInnerMerchantOrder",
+    "returnUrl":"http://127.0.0.1/pay/jsp/gopay/true.jsp",
+    "remark":"下单请求",
+    "sign":"91381A854EC9AD02D409B1110955A5BE"
+}
+        </code></pre>
+        <hr>
+        <h3><a id="3___63"></a>3. 统一下单（接口）</h3>
+        <h4><a id="a__64"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>路由地址：/api/gateway/generateOrder</li>
+                <li>请求方式：POST</li>
+                <li>接收参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b__69"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">必填</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchantUUID</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户UUID，从后台右上角获取</td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>
+                    订单金额，最大支持精确到小数点后2位,例：199.30
+                </td>
+            </tr>
+            <tr>
+                <td>payType</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>支付方式（通道编码），详情见附录1:通道编码payType列表</td>
+            </tr>
+            <tr>
+                <td>clientIp</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>玩家真实IP，如果有传值，参与签名</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户订单号</td>
+            </tr>
+            <tr>
+                <td>notifyUrl</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>支付结果异步回调地址</td>
+            </tr>
+            <tr>
+                <td>returnUrl</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>支付返回重定向地址</td>
+            </tr>
+            <tr>
+                <td>remark</td>
+                <td align="center">string</td>
+                <td align="center">非必填</td>
+                <td>订单备注，转卡通道请在此处填入会员真实姓名用来核实到账</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>参数签名，规则见前文，<a href="http://198.74.117.41/3.html#2__26">签名规则</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>请求参数示例:</strong></p>
+        <pre><code>{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "price":"199.30",
+    "payType":"alipay_h5",
+    "merchantOrderNo":"211005023628200453",
+    "notifyUrl":"http://127.0.0.1/api/gateway/notifyInnerMerchantOrder",
+    "returnUrl":"http://127.0.0.1/pay/jsp/gopay/true.jsp",
+    "remark":"下单请求",
+    "sign":"91381A854EC9AD02D409B1110955A5BE"
+}
+</code></pre>
+        <h4><a id="b__93"></a>b. 返回结果:<sub>data内部参数，只有当外层code=0的时候才会有值，code为非0的时候，msg中有提示失败原因</sub></h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>sysOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">系统订单号</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">商户提交的订单号</td>
+            </tr>
+            <tr>
+                <td>payUrl</td>
+                <td align="center">string</td>
+                <td align="center">支付链接</td>
+            </tr>
+            <tr>
+                <td>payParams</td>
+                <td align="center">string</td>
+                <td align="center">支付参数，一般情况下没有值，只有个别支付入金网关例如支付宝sdk支付的时候需要</td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td align="center">string</td>
+                <td align="center">订单金额</td>
+            </tr>
+            <tr>
+                <td>expiresTime</td>
+                <td align="center">string</td>
+                <td align="center">订单过期时间</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>返回结果示例</strong></p>
+        <pre><code>{
+    "code": 0,
+    "data": {
+        "sysOrderNo": "JD88882205310013030001",
+        "merchantOrderNo": "211005023628200453",
+        "payUrl": "http://xx.zhuankehaoyangmao.com:7788/dsx/pay.do?method=codePrePay&amp;token=ukedhciephdywjdJD88882205310008130001acfsv",
+        "payParams": "",
+        "price": "199.3",
+        "expiresTime": "0001-01-01 00:00:00"
+    },
+    "msg": "操作成功"
+}
+</code></pre>
+        <hr>
+        <h3><a id="4___121"></a>4. 订单异步通知回调（接口）</h3>
+        <h4><a id="a__122"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>请求地址：地址为您在发起订单过程中传入的notifyUrl</li>
+                <li>请求方式：POST</li>
+                <li>请求参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b__127"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>price</td>
+                <td align="center">string</td>
+                <td align="center">订单发起金额，最大支持精确到小数点后2位，参数类型是double数字类型</td>
+            </tr>
+            <tr>
+                <td>sysOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">系统订单号</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">商户订单号</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td align="center">string</td>
+                <td align="center">订单状态,"PAY_STATUS_SUCCESS" 为支付成功</td>
+            </tr>
+            <tr>
+                <td>fee</td>
+                <td align="center">string</td>
+                <td align="center">订单产生的手续费,double类型</td>
+            </tr>
+            <tr>
+                <td>payTime</td>
+                <td align="center">string</td>
+                <td align="center">支付时间</td>
+            </tr>
+            <tr>
+                <td>realMoney</td>
+                <td align="center">string</td>
+                <td align="center">实际支付金额，根据不同通道规则，跟订单发起金额对比，最大可能会有上下1元的浮动</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">参数签名，规则见前文，签名规则</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>回调通知请求示例</strong></p>
+        <pre><code>{
+    "price":"199.3",
+    "sysOrderNo":"JD88882205310035500001",
+    "merchantOrderNo":"211005023628200453",
+    "status":"PAY_STATUS_SUCCESS",
+    "fee":"19.93",
+    "payTime":"2022-05-31 00:36:04",
+    "realMoney":"199.3",
+    "sign":"5F9A02235A526925AE6D2CD62FCACE8D"
+}
+</code></pre>
+        <h4><a id="c__151"></a>c. 回调接收返回</h4>
+        <blockquote>
+            <p>我方调用notifyUrl回调你方系统之后，你方系统收到回调并且再次调用我方查单接口核实订单状态，以确认是我方系统发送过来的回调，防止黑客伪造回调发送假回调导致损失，如未对接反查订单状态接口，导致被撸单，我方概不负责，核实处理完成后需要给我方回复<strong style="color: #0c93e4">SUCCESS</strong>,才会确认该笔订单回调成功</p>
+        </blockquote>
+        <p><strong style="color: #dd4a68">我方接收返回结果（必须为大写）</strong></p>
+        <pre><code>SUCCESS
+</code></pre>
+        <hr>
+        <hr>
+        <h3><a id="5___162"></a>5. 查询订单（接口）</h3>
+        <h4><a id="a__163"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>路由地址：/api/gateway/queryOrder</li>
+                <li>请求方式：POST</li>
+                <li>接收参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b__168"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">必填</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchantUUID</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户UUID，从后台右上角获取</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户订单号</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>参数签名，规则见前文，签名规则</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>请求示例</strong></p>
+        <pre><code>{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "merchantOrderNo": "21100502362820045213",
+    "sign":"1E2D8B63B78F77BB6458E5D719CD9E50"
+}
+</code></pre>
+        <h4><a id="c__183"></a>c. 返回结果 ，以下未内层data参数内容，外层包含code，请先判断code是否=0，code为0的时候代表查询成功，code!=0是查询出错，详情见msg字段，请参考下文查单"返回示例"</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>price</td>
+                <td align="center">string</td>
+                <td align="center">订单发起金额，最大支持精确到小数点后2位，参数类型是double数字类型</td>
+            </tr>
+            <tr>
+                <td>sysOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">系统订单号</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">商户订单号</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td align="center">string</td>
+                <td align="center">订单状态,"PAY_STATUS_SUCCESS"支付成功;"PAY_STATUS_NOT_PAY"未支付;"PAY_STATUS_PAY_FAILED"支付失败;"PAY_STATUS_GENERATE_FAILED"下单失败,未出码</td>
+            </tr>
+            <tr>
+                <td>fee</td>
+                <td align="center">string</td>
+                <td align="center">订单产生的手续费,double类型</td>
+            </tr>
+            <tr>
+                <td>payTime</td>
+                <td align="center">string</td>
+                <td align="center">支付时间</td>
+            </tr>
+            <tr>
+                <td>realMoney</td>
+                <td align="center">string</td>
+                <td align="center">实际支付金额，根据不同通道规则，跟订单发起金额对比，最大可能会有上下1元的浮动</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>返回结果示例</strong></p>
+        <pre><code>{
+    "code": 0,
+    "data": {
+        "price": "199.3",
+        "sysOrderNo": "JD88882205310058080001",
+        "merchantOrderNo": "21100502362820045213",
+        "status": "PAY_STATUS_SUCCESS",
+        "fee": "19.93",
+        "payTime": "2022-05-31 00:58:22",
+        "realMoney": "199.3"
+    },
+    "msg": "操作成功"
+}
+</code></pre>
+
+
+        <h3><a id="6___63"></a>3. API代付下单（接口）</h3>
+        <h4><a id="a6__64"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>路由地址：/api/gateway/walletWithdrawAPIV2</li>
+                <li>请求方式：POST</li>
+                <li>接收参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b6__69"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">必传参数</th>
+                <th align="center">参与签名</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchantUUID</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>商户UUID，从后台右上角获取</td>
+            </tr>
+
+            <tr>
+                <td>amount</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>订单金额，将浮点数保留两位小数后转换成string类型参与签名和传输</td>
+            </tr>
+            <tr>
+                <td>channelCode</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>通道编码（eg：301）</td>
+            </tr>
+            <tr>
+                <td>productType</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>代付目标类型，用来区分选择银行卡代付还是支付宝代付（银行卡代付：chn.bank.payout 支付宝代付：chn.alipay.payout）</td>
+            </tr>
+
+            <tr>
+                <td>currency</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>货币代码，eg：CNY  （人民币）</td>
+            </tr>
+            <tr>
+                <td>approveType</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>选择提现审核方式,  1 (人工审核打款)  2 (API三方代付)  此处目前默认传2</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>商户订单号</td>
+            </tr>
+            <tr>
+                <td>notifyUrl</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">是</td>
+                <td>支付结果异步回调地址</td>
+            </tr>
+            <tr>
+                <td>remark</td>
+                <td align="center">string</td>
+                <td align="center">选填</td>
+                <td align="center">是</td>
+                <td>订单备注(选填)</td>
+            </tr>
+            <tr>
+                <td>extInfo</td>
+                <td align="center">object</td>
+                <td align="center">必传</td>
+                <td align="center">否</td>
+                <td>代付附加信息，具体内容包含在json对象里边！！！该字段内容不参与签名</td>
+            </tr>
+            <tr>
+                <!-- rowspan="2" 合并两行-->
+                <td>extInfo.bankName</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">否</td>
+                <td>银行名称：eg:中国银行   （支付宝代付填写固定值：支付宝）</td>
+            </tr>
+            <tr>
+                <td>extInfo.fullName</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">否</td>
+                <td>持卡人姓名：eg:张三  （支付宝代付也是一样，填写支付宝用户实名） </td>
+            </tr>
+            <tr>
+                <td>extInfo.bankcardNumber</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">否</td>
+                <td>持卡人卡号：eg: 6217876621231133  (支付宝代付填写支付宝帐号eg:19872333321)</td>
+            </tr>
+
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">必传</td>
+                <td align="center">否</td>
+                <td>参数签名结果，规则见前文，MD5签名规则，该字段不参与签名</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>请求参数示例:</strong></p>
+        <pre><code>{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "amount":"100.00",
+    "channelCode":"301",
+    "productType":"chn.bank.payout",
+    "currency":"CNY",
+    "approveType":"2",
+    "remark":"just pay",
+    "merchantOrderNo":"96270A93765f113xx8",
+    "notifyUrl":"http://localhost/api/gateway/notifyInnerMerchantWithdrawOrder",
+    "extInfo":{
+        "bankName":"中国银行",
+        "fullName":"张三",
+        "bankcardNumber":"6217876621231133"
+    },
+    "sign":"GTYmRuqm80OVNaDXMEUz2aUqgNJ2411"
+}
+</code></pre>
+        <h4><a id="b6__93"></a>b. 返回结果</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>sysOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">系统订单号</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">商户提交的订单号</td>
+            </tr>
+
+            <tr>
+                <td>amount</td>
+                <td align="center">string</td>
+                <td align="center">代付提交金额</td>
+            </tr>
+            <tr>
+                <td>fee</td>
+                <td align="center">string</td>
+                <td align="center">代付提现手续费</td>
+            </tr>
+            <tr>
+                <td>realMoney</td>
+                <td align="center">string</td>
+                <td align="center">实际代付打款</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td align="center">int</td>
+                <td align="center">代付提现订单状态 3，代付处理中，6，代付提交失败</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>返回结果示例</strong></p>
+        <pre><code>{
+    "code": 0,
+    "data": {
+        "sysOrderNo": "WD2108241401560002",
+        "merchantOrderNo": "IME12134324123123123",
+        "amount": "100",
+        "fee": "10",
+        "realMoney": "100",
+        "status": 3
+    },
+    "msg": "操作成功"
+}
+</code></pre>
+
+        <hr>
+        <h3><a id="7___121"></a>7. API代付订单异步通知回调（接口）</h3>
+        <h4><a id="a7__122"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>请求地址：地址为您在发起订单过程中传入的notifyUrl</li>
+                <li>请求方式：POST</li>
+                <li>请求参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b7__127"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>amount</td>
+                <td align="center">string</td>
+                <td align="center">订单金额，精确到小数点后2位</td>
+            </tr>
+            <tr>
+                <td>sysOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">系统订单号</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">商户订单号</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td align="center">string</td>
+                <td align="center">代付提现订单状态: 4，代付成功，5，代付失败</td>
+            </tr>
+            <tr>
+                <td>fee</td>
+                <td align="center">string</td>
+                <td align="center">代付订单产生的手续费</td>
+            </tr>
+            <tr>
+                <td>approvalTime</td>
+                <td align="center">string</td>
+                <td align="center">代付处理时间</td>
+            </tr>
+
+            <tr>
+                <td>approvalRemark</td>
+                <td align="center">string</td>
+                <td align="center">代付处理备注，（例：已处理，已完成代付）</td>
+            </tr>
+            <tr>
+                <td>realMoney</td>
+                <td align="center">string</td>
+                <td align="center">实际代付金额</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">参数签名，验签规则参考签文签名规则，MD5签名算法</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>回调通知请求示例</strong></p>
+        <pre><code>{
+        "sysOrderNo": "AW88882110202120270001",
+        "merchantOrderNo": "961855vsavfd9d121113218",
+        "status": "4",
+        "amount": "30",
+        "fee": "5",
+        "realMoney": "30",
+        "approvalTime": "2021-10-20 21:20:28",
+        "approvalRemark": "代付完成",
+        "sign": "HDHJYUUDYEUIUKOWWIUWIDK72189"
+    }
+
+</code></pre>
+        <h4><a id="c7__151"></a>c. 回调接收返回</h4>
+        <blockquote>
+            <p>我方调用notifyUrl回调你方系统之后，你方系统收到回调并且正确处理，需要返回给我方SUCCESS,才会确认该笔订单回调成功</p>
+        </blockquote>
+        <p><strong>我方接收返回结果（必须为大写）</strong></p>
+        <pre><code>SUCCESS
+</code></pre>
+        <hr>
+
+        <hr>
+        <h3><a id="8___162"></a>8. API代付订单查询订单（接口）</h3>
+        <h4><a id="a8__163"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>路由地址：/api/gateway/queryWithdrawOrder</li>
+                <li>请求方式：POST</li>
+                <li>接收参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b8__168"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">必填</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchantUUID</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户UUID，从后台右上角获取</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户订单号</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>参数签名，规则见前文，签名规则</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>请求示例</strong></p>
+        <pre><code>{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "merchantOrderNo":"IME201234324233222",
+    "sign":"CACtBF80bwnSpFVtFKuXqlD+6cR5EXXislZ"
+}
+</code></pre>
+        <h4><a id="c8__183"></a>c. 返回结果</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>amount</td>
+                <td align="center">string</td>
+                <td align="center">订单金额，精确到小数点后2位</td>
+            </tr>
+            <tr>
+                <td>sysOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">系统订单号</td>
+            </tr>
+            <tr>
+                <td>merchantOrderNo</td>
+                <td align="center">string</td>
+                <td align="center">商户订单号</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td align="center">string</td>
+                <td align="center">代付提现订单状态，3：代付处理中，4：代付成功，5：代付失败 ，6：代付提交不成功</td>
+            </tr>
+            <tr>
+                <td>fee</td>
+                <td align="center">string</td>
+                <td align="center">代付订单产生的手续费</td>
+            </tr>
+            <tr>
+                <td>approvalTime</td>
+                <td align="center">string</td>
+                <td align="center">代付处理时间，如果status为1（未提交），则该字段值为0001-01-01 00:00:00</td>
+            </tr>
+
+            <tr>
+                <td>approvalRemark</td>
+                <td align="center">string</td>
+                <td align="center">代付处理备注，（例：已处理，已完成代付）</td>
+            </tr>
+            <tr>
+                <td>realMoney</td>
+                <td align="center">string</td>
+                <td align="center">实际代付金额</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">参数签名，规则见前文，签名规则</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>返回结果示例</strong></p>
+        <pre><code>{
+    "code": 0,
+    "data": {
+        "sysOrderNo": "WD2108241423570001",   //系统订单号
+        "merchantOrderNo": "IME12134324123123125",  //商户订单号
+        "status": "2",   //代付提现订单状态: 3:代付处理中，4:代付成功，5:代付失败 ，6:代付提交失败
+        "amount": "100",    //提现发起金额
+        "fee": "10",     //提现手续费
+        "realMoney": "100",    //实际到账金额
+        "approvalTime": "2021-08-24 15:06:20",     //审核时间，如果status为1（未审核），则该字段值为0001-01-01 00:00:00
+        "approvalRemark": "审核通过，已经打款",    //审核备注
+        "sign": "PCZG22lHYGJIOC5XJZe5TfCCyBTXET"
+    },
+    "msg": "操作成功"
+}
+</code></pre>
+
+
+        <hr>
+        <h3><a id="9___162"></a>8. 查询商户余额（接口）</h3>
+        <h4><a id="a9__163"></a>a. 请求说明</h4>
+        <blockquote>
+            <ul>
+                <li>路由地址：/api/gateway/queryMerchantBalance</li>
+                <li>请求方式：POST</li>
+                <li>接收参数类型(Content-Type): application/json</li>
+            </ul>
+        </blockquote>
+        <h4><a id="b9__168"></a>b. 请求参数</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">必填</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>merchantUUID</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>商户UUID，从后台右上角获取</td>
+            </tr>
+            <tr>
+                <td>sign</td>
+                <td align="center">string</td>
+                <td align="center">必填</td>
+                <td>参数签名，规则见前文，签名规则</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>请求示例</strong></p>
+        <pre><code>{
+    "merchantUUID":"eebdf103-39c6-4ce6-998c-95a32bce7ab3",
+    "sign":"QAE23IORIO3I4HDJSKJS76HJSJSKJSL"
+}
+</code></pre>
+        <h4><a id="c9__183"></a>c. 返回结果</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th align="center">类型</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>balance</td>
+                <td align="center">double</td>
+                <td align="center">商户余额，商户代收订单入账余额，double类型(非string)</td>
+            </tr>
+            <tr>
+                <td>backupBalance</td>
+                <td align="center">double</td>
+                <td align="center">商户代付备用金余额，商户API提交代付从该余额扣除，double类型(非string)</td>
+            </tr>
+            <tr>
+                <td>freezeBalance</td>
+                <td align="center">double</td>
+                <td align="center">冻结余额</td>
+            </tr>
+            <tr>
+                <td>withdrawFreezeBalance</td>
+                <td align="center">double</td>
+                <td align="center">商户API代付以及商户后台手动提现，未处理完成之前，都会暂时进入提现冻结余额</td>
+            </tr>
+            <tr>
+                <td>merchantUUID</td>
+                <td align="center">string</td>
+                <td align="center">商户UUID</td>
+            </tr>
+            </tbody>
+        </table>
+        <p><strong>返回结果示例</strong></p>
+        <pre><code>{
+    "code": 0,
+    "data": {
+        "balance": 1000,
+        "backupBalance": 590,
+        "freezeBalance": 0,
+        "withdrawFreezeBalance": 246,
+        "merchantUUID": "eebdf103-39c6-4ce6-998c-95a32bce7ab3"
+    },
+    "msg": "操作成功"
+}
+</code></pre>
+
+
+        <h3><a id="6___200"></a>6. 对接demo</h3>
+        <h4><a id="a__200" download="true" href="http://198.74.117.41/resources/GenerateOrderForJuding.java" style="cursor: pointer; text-decoration: underline">JAVA DEMO 点击下载</a></h4>
+        <h4><a id="b__201" download="true" href="http://198.74.117.41/resources/GenerateOrderForJuding.php" style="cursor: pointer; text-decoration: underline">PHP DEMO 点击下载</a></h4>
+        <h3><a id="7___300"></a>7. 附录</h3>
+        <h4><a id="a__300"></a>a. 附录1:通道编码payType列表(！！！具体已开通的通道编码根据运营人员通知)</h4>
+        <table>
+            <thead>
+            <tr>
+                <th align="center">payType值</th>
+                <th align="center">说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td align="center">1001</td>
+                <td align="center">1001通道</td>
+            </tr>
+            <tr>
+                <td align="center">1002</td>
+                <td align="center">1002通道</td>
+            </tr>
+            <tr>
+                <td align="center">1003</td>
+                <td align="center">1003通道</td>
+            </tr>
+            <tr>
+                <td align="center">1004</td>
+                <td align="center">1004通道</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3><a id="__213"></a>本系统最终解释权归“聚鼎”聚合支付开发团队所有，所有有权使用本系统的主体，均以获得授权并且租用的方式使用，所有源码永远不外泄，如市面上出现其他茂名系统，并因此导致的经济损失于本团队无关，“聚鼎”聚合支付
+            只此一家，别无分号！</h3>
+
+    </div>
+</div>
+
+
+<div id="mttContainer" class="bootstrapiso notranslate" data-html="true" data-original-title="The system operation is not smooth, and I always don&amp;#x2019;t know where to look up the data. The main reason is that the system writers do not have a deep understanding of the industry, have not actually operated the four-party aggregation payment platform, and do not know what functions are needed as system operators. , leading to many things being taken for granted, but the main design and development team members of &amp;#x22;Juding&amp;#x22; have actual experience in operating the Sifang Aggregation payment platform and know what people in the same industry want." title="" style="transform: translate(586px, 176px);" dir="ltr"></div></body></html>

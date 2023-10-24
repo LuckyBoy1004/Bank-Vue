@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021-08-07</title>
+    <link rel="stylesheet" href="./style.css">
+<style id="mttstyle">
+    #mttContainer {
+      left: 0 !important;
+      top: 0 !important;
+      width: 1000px !important;
+      margin-left: -500px !important;
+      position: fixed !important;
+      z-index: 100000200 !important;
+      background: none !important;
+      pointer-events: none !important;
+      display: inline-block !important;
+    }
+    .bootstrapiso .tooltip {
+      width:auto  !important;
+      height:auto  !important;
+      background: none !important;
+      border:none !important;
+      border-radius: 0px !important;
+      visibility: visible  !important;
+      pointer-events: none !important;
+    }
+    .bootstrapiso  .bs-tooltip-top { 
+      margin-bottom: 15px  !important;
+    }
+    .bootstrapiso  .bs-tooltip-bottom { 
+      margin-top: 15px  !important;
+    }
+    .bootstrapiso .tooltip-inner {
+      font-size: 14px  !important;
+      max-width: 200px  !important;
+      text-align: center !important;
+      backdrop-filter: blur(4px) !important; 
+      background-color: #000000b8 !important;
+      color: #ffffffff !important;
+      pointer-events: auto;
+    }
+    .bootstrapiso .arrow::before {
+      border-top-color: #000000b8 !important;
+    }
+    .bootstrapiso .arrow {
+      font-size: 14px  !important;
+      margin: auto  !important;
+    }
+    .bootstrapiso .arrow::after {
+      display:none !important;
+    }
+    .ocr_text_div{
+      position: absolute;
+      opacity: 0.7;
+      font-size: calc(100% + 1cqw);
+      overflow: hidden;
+      border: 2px solid CornflowerBlue;
+      color: transparent !important;
+      background: none !important;
+    }
+
+    </style></head>
+
+<body class="stackedit">
+<div class="stackedit__left">
+    <div class="stackedit__toc">
+        <div class="toc"><h3>文章目录</h3>
+            <ul>
+                <li><a href="http://198.74.117.41/1.html#___1">欢迎使用 聚鼎四方系统演示支付系统 （使用指引-系统管理员版）</a></li>
+                <ul>
+                    <ul>
+                        <li><a href="http://198.74.117.41/1.html#1__20">1. 进入系统</a></li>
+                        <li><a href="http://198.74.117.41/1.html#2__26">2. 对接上游三方支付入金网关，开通支付产品(通道)</a></li>
+                        <ul>
+                            <ul>
+                                <li><a href="http://198.74.117.41/1.html#a__31">a. 将上游的开户信息录入系统</a></li>
+                                <li><a href="http://198.74.117.41/1.html#b__46">b. 开通对应入金网关的支付产品（通道）</a></li>
+                                <li><a href="http://198.74.117.41/1.html#c___53">c. 新增产品路由模板</a></li>
+                            </ul>
+                        </ul>
+                        <li><a href="http://198.74.117.41/1.html#3______60">3. 代理商管理 - 开户/配置产品(通道)/配置对应产品(通道)费率</a></li>
+                        <ul>
+                            <ul>
+                                <li><a href="http://198.74.117.41/1.html#a___62">a. 新增代理商（开户）</a></li>
+                                <li><a href="http://198.74.117.41/1.html#b___69">b. 为代理商配置产品费率</a></li>
+                            </ul>
+                        </ul>
+                        <li><a href="http://198.74.117.41/1.html#4______73">4. 商户管理 - 开户/配置产品(通道)/配置对应产品(通道)费率</a></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/1.html#a__76">a. 商户通道配置</a></li>
+                        </ul>
+                        <li><a href="http://198.74.117.41/1.html#5__82">5. 钱包管理</a></li>
+                        <li><a href="http://198.74.117.41/1.html#5__90">5. 结算管理（商户/代理商提现管理）</a></li>
+                        <ul>
+                            <li><a href="http://198.74.117.41/1.html#a__91">a. 结算卡管理</a></li>
+                            <li><a href="http://198.74.117.41/1.html#a__94">a. 提现审核</a></li>
+                        </ul>
+                        <li><a href="http://198.74.117.41/1.html#6__97">6. 订单管理</a></li>
+                        <li><a href="http://198.74.117.41/1.html#7__100">7. 系统其他支持</a></li>
+                        <li><a href="http://198.74.117.41/1.html#_107">本系统最终解释权归“聚鼎”聚合支付开发团队所有，所有源码永远不外泄，如市面上出现其他茂名系统，并因此导致的经济损失于本团队无关，“聚鼎”只此一家，别无分号！</a>
+                        </li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="stackedit__right">
+    <div class="stackedit__html">
+<!--        <p><img src="https://img-blog.csdnimg.cn/739044d2dd79492196eda56fba2fcb89.png" alt="聚鼎四方系统演示支付"></p>-->
+        <h1><a id="___1"></a>欢迎使用 聚鼎四方系统演示支付系统 （使用指引-系统管理员版）</h1>
+        <hr>
+        <p>我们理解您需要更高效，更安全，更顺手，性能更高的四方聚合支付系统。<br><br>
+            您再也不想经历使用过程中系统突然卡顿，老是刷新不出来，多刷几下直接卡死的情况<br>
+            您再也不想经历使用过程中要查一条数据，要找一个模块老是不知道该往哪里去找<br>
+            您再也不想使用过程中，每天对账分析赚了多少钱都很开心，突然有一天账对不上，订单被异常回调。</p>
+        <p>现在来使用“聚鼎”吧！</p>
+        <blockquote>
+            <ul>
+                <li>系统卡顿，一方面原因是，技术人员编写代码不过关，写的代码性能太低，效率太低，数据量大了之后就开始卡顿<br>
+                    另外一方面也是主要因素，过往情况下这一行的大部分系统都是用php编写的，php的程序性能相比其他语言低下，只是因为php门槛低，便于编写，所以很多人“捡烂便宜”，而我们聚鼎系统，使用golang+vue作为技术栈，前后端分离完成，性能更高，操作更流畅
+                </li>
+                <li>
+                    系统操作不顺手，老是不知道该到哪里去查数据，主要原因还是因为系统编写人员对行业了解不深，没有实际运营过四方聚合支付平台，不知道作为系统运营人员到底需要什么样的功能，导致很多地方想当然，而“聚鼎”的主要设计和开发团队成员是有实际经营四方聚合支付平台的经验的，知道同行业人员到底要什么
+                </li>
+                <li>
+                    使用系统过程中被莫名其妙偷撸？主要原因还是你们之前使用的系统是外界已经传播得很广的“烂大街”产品，源码满天飞，一方面别人已经在流传的代码中安插了后门，你只要使用别人就知道，想搞你的时候顺手就搞了，另一方面这些“烂大街”的系统大部分都是PHP编写的，PHP臭名远扬，漏洞第一好找，一不小心就被别人黑进去了，而“聚鼎”系统，因为后端采用golang语言开发，属于编译型语言，直接编译成可执行文件给你们部署到服务器，本身就自带安全性，而且系统开发过程中也做了防范黑客渗透的操作，第二方面，永远不卖源码，市面上使用的只可能是我们租出去的使用可执行文件部署的系统，所以不用担心系统被人研究或者被传播之后安插后门！
+                </li>
+            </ul>
+        </blockquote>
+        <h2>感谢您选择“聚鼎”，现在您可以开始使用</h2>
+        <h2>
+        </h2>
+        <p></p>
+        <p></p>
+        <h3><a id="1__20"></a>1. 进入系统</h3>
+        <p><strong>登陆进入系统，您会看到当前的统计视图，直观的展示了您的近期运营数据</strong><br>
+            <img src="./4_files/1530fbf04bdb44a99fe0a2e2e7ccc411.png" alt="在这里插入图片描述"></p>
+        <h3><a id="2__26"></a>2. 对接上游三方支付入金网关，开通支付产品(通道)</h3>
+        <blockquote>
+            <ul>
+                <li>从上游三方开户</li>
+                <li>将开户信息录入系统</li>
+                <li>联系我方开发团队去对接上游的接口</li>
+                <li>配置上游的支付产品</li>
+            </ul>
+        </blockquote>
+        <h5><a id="a__31"></a>a. 将上游的开户信息录入系统</h5>
+        <blockquote>
+            <p>依次点击菜单栏，“入金网关”-&gt;“入金网关列表”-&gt;“新增入金网关”，在弹框中输入上游名称，选择上游所支持的支付方式，（支付方式在本系统为预设固定选项，根据上游提供出来的通道动态的选择，可多选），选择上游开户信息涉及到的参数，商户号，秘钥等!</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/a00147b9b0664b0d94efc3af9f6de0b9.png" alt="在这里插入图片描述"></p>
+        <p>添加完成结果<br>
+            <img src="./4_files/acd500d0e04e42ebb4eb6f421316555b.png" alt="在这里插入图片描述"></p>
+        <blockquote>
+            <p>依次点击“入金网关”-&gt;“网关密钥配置”-&gt; “新增网关密钥”，选择刚刚的新增完成的入金网关，将您从上游三方获取到的对接参数填入，然后联系“聚鼎”技术人员进行技术对接</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/98fb32dfecb44e3990d189c90333ceef.png" alt="在这里插入图片描述"></p>
+        <p>添加完成结果<br>
+            <img src="./4_files/4d2f3aa27f7f40d2880a7b1d4103cefb.png" alt="在这里插入图片描述"></p>
+        <h5><a id="b__46"></a>b. 开通对应入金网关的支付产品（通道）</h5>
+        <blockquote>
+            <p>
+                本系统对外的支付产品（通道）,是按照预设的若干支付方式（支付宝二维码，支付宝H5，微信二维码，微信H5等…）开放给商户对接，所以从上游接过来的支付通道，必须在本系统对应配置为相应支付方式的“支付产品”之后对外开放对接。<br><br>依次点击
+                <strong>“产品管理”</strong>-&gt;<strong>“产品列表”</strong>-&gt;<strong>“新增产品”</strong>,选择刚刚添加完成的入金网关，选择指定的支付方式，根据上游提供的信息为其配置入款金额，以及根据你方准备外放的费率设置好费率，上游提供多少支付通道，这里就相应的添加多少条支付产品
+            </p>
+            <blockquote>
+                <ul>
+                    <li><strong>注：</strong>
+                        显示名称处命名规则建议：会自动生成一串名称，但是建议为了辨识度高，您根据上游的具体通道，比如“淘宝代付”，“得物代付”，“微信话费”，“支付宝当面付”等等…为该产品名称，最好还要加上入金网关方名的名称，去增加辨识度
+                        例如：“无忧-得物zfb代付”，“无忧-个码扫码”…
+                    </li>
+                </ul>
+            </blockquote>
+        </blockquote>
+        <p>
+            <img src="./4_files/0ac5a5f2df8e4484b6665caa1a8992cc.png" alt="在这里插入图片描述"><br>
+            添加完成效果：<br>
+            <img src="./4_files/7c6497dfff19402b9313a711cf003721.png" alt="在这里插入图片描述"></p>
+        <h5><a id="c___53"></a>c. 新增产品路由模板</h5>
+        <blockquote>
+            <p>
+                由于本系统可能对接不同的入金网关，不同的入金网关都有若干的支付通道/产品，所以下游商户的创建订单请求进入系统后，需要让系统决定给商户分配某一上游入金网关的某一条支付通道，所以需要在系统预设产品路由，设置每个产品的权重，根据对外开放的不同支付方式，从已有的支付产品中选择并设置权重，生成模板<br>依次点击<strong>产品管理</strong>-&gt;<strong>产品路由模板</strong>-&gt;<strong>新增模板</strong>
+                ，模板是根据支付方式区分的，每个支付方式的只能有一个默认模板，当新增商户后，会自动为商户分配默认的路由模板，也可以在商户管理里边去为该商户修改模板，后续会介绍。</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/77667cda08fe4fc38ed1d417bc3d3fee.png" alt="在这里插入图片描述"><br>
+            添加完成效果：<br>
+            <img src="./4_files/1689d5b3466948a0852d81bcd718498d.png" alt="在这里插入图片描述"></p>
+        <h3><a id="3______60"></a>3. 代理商管理 - 开户/配置产品(通道)/配置对应产品(通道)费率</h3>
+        <blockquote>
+            <p>代理商是系统关键性角色，许多商户和走量都需要依靠代理商介绍过来的客户</p>
+        </blockquote>
+        <h5><a id="a___62"></a>a. 新增代理商（开户）</h5>
+        <blockquote>
+            <p>依次点击<strong>代理商管理</strong> -&gt; <strong>代理商列表</strong> -&gt; <strong>新增代理商</strong>
+                ；用户名要求输入英文，数字，下划线的组合(不能以数字开头),<br>
+                联系方式最好加上，方便后续维护</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/d5142099ac1d46bd8b318c09bdb9c66b.png" alt="在这里插入图片描述"><br>
+            开户完成结果:<br>
+            <img src="./4_files/bb8f1b649d454f14aec3ffd7fbb4febf.png" alt="在这里插入图片描述"></p>
+        <h5><a id="b___69"></a>b. 为代理商配置产品费率</h5>
+        <blockquote>
+            <p>不同实力的代理商有不同的费率，所以此处可以为代理商单独设置产品费率，点击 <strong>通道配置</strong> <br> 依次选择<strong>支付方式</strong>-&gt;<strong>路由模板</strong>（路由模板来源参考前置内容<strong>新增产品路由模板</strong>）为指定的产品设置费率,点击确定完成费率设置
+            </p>
+        </blockquote>
+        <p>
+            <img src="./4_files/c9e7f72e691144c8a033e98f6df0f309.png" alt="在这里插入图片描述"></p>
+        <h3><a id="4______73"></a>4. 商户管理 - 开户/配置产品(通道)/配置对应产品(通道)费率</h3>
+        <blockquote>
+            <p>商户管理和代理商管理类似，依次点击"<strong>商户管理</strong>-&gt;<strong>商户列表</strong>"-&gt;<strong>新增商户</strong>可以给新商户开开户<br>
+                另外，通道配置也可以设置费率，虽然在前文<strong>新增产品</strong>处已经为某产品设置过费率，但是针对不同实力的商户，费率还是有变动空间的，所以此处可以人性化的为某一商户修改某产品的费率</p>
+        </blockquote>
+        <h4><a id="a__76"></a>a. 商户通道配置</h4>
+        <blockquote>
+            <p>商户列表点击<strong>通道配置</strong>，注意，代理商的通道配置只是为了 设置代理商在某一产品的费率，<strong>产品路由</strong>
+                的权重对代理商并没有实际影响,对该代理商下边的商户下单请求也不会造成影响，代理商列表配置通道之后只会影响该代理商在某一产品的代理分润。<br><br>
+                在商户列表选择<strong>通道配置</strong>结束之后会影响到该商户的下单请求分发，以及所设置的费率会影响到商户订单完成之后的结算手续费。</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/a9036eeb2e94468ca17f1a09e2d837f9.png" alt="在这里插入图片描述"></p>
+        <h3><a id="5__82"></a>5. 钱包管理</h3>
+        <blockquote>
+            <p>该菜单可以查看系统所有接入的代理商和商户的钱包余额</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/b2a76be6c43447d4a021cf35b1ad1564.png" alt=""></p>
+        <blockquote>
+            <p>钱包日志记录，可以查看商户以及代理商钱包的变动记录</p>
+        </blockquote>
+        <p>
+            <img src="./4_files/c3b11255a164444585f7c55bd4301b45.png" alt="在这里插入图片描述"></p>
+        <h3><a id="5__90"></a>5. 结算管理（商户/代理商提现管理）</h3>
+        <h4><a id="a__91"></a>a. 结算卡管理</h4>
+        <blockquote>
+            <p>查看系统所有代理商和商户提交过来的结算卡</p>
+        </blockquote>
+        <h4><a id="a__94"></a>a. 提现审核</h4>
+        <blockquote>
+            <p>
+                商户和代理商提交的结算请求，如果转款完成/或者驳回提现请求，需要去<strong>提现审核</strong>里边作相应处理，如果选择驳回，商户因为提现暂时冻结的资金会退回到<strong>可提现余额</strong>
+            </p>
+        </blockquote>
+        <h3><a id="6__97"></a>6. 订单管理</h3>
+        <blockquote>
+            <p>订单信息比较多，主要展示商户订单的动态，以及完成查单，补发回调，手动补单等操作，基本属于行业标准，自行探索即可</p>
+        </blockquote>
+        <h3><a id="7__100"></a>7. 系统其他支持</h3>
+        <blockquote>
+            <ul>
+                <li>系统支持对接三方API代付，为商户的提现实现API自动代付</li>
+                <li>系统支持商户通过对接API往后台添加结算卡信息</li>
+                <li>系统支持商户通过对接API往后台提交下发请求，但是如果平台未对接三方API代付的话，还是需要人工去打款并审核提现请求。只是给商户提供了便利，不用每笔提现都登录后台提交。<br>
+                    更多DIY的开发需求，可以联系“聚鼎”开发团队
+                </li>
+            </ul>
+        </blockquote>
+        <h3><a id="_107"></a>本系统最终解释权归“聚鼎”聚合支付开发团队所有，所有源码永远不外泄，如市面上出现其他茂名系统，并因此导致的经济损失于本团队无关，“聚鼎”只此一家，别无分号！</h3>
+
+    </div>
+</div>
+
+
+
+<div id="mttContainer" class="bootstrapiso notranslate" data-html="true" data-original-title="" title="" style="transform: translate(406px, 328px);"></div></body></html>
